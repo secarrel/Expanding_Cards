@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-image: url(https://images.unsplash.com/photo-1515339760107-1952b7a08454?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+    font-size: 32px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.622);
+    padding: 1vw;
+    border-radius: 10%;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.7s ease-in 0.2s;
+}
+
+@media(max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
